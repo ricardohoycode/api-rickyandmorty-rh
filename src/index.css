@@ -1,0 +1,311 @@
+:root {
+  --color-primario: #dad60ffb;
+  --color-primarioOscuro: darkred;
+
+  --fuentePrincipal: "Lato", sans-serif;
+
+  --color-blanco: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgb(0, 0, 94), rgb(5, 5, 5));
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+
+  background-repeat: no-repeat;
+  margin: 0;
+  color: var(--color-blanco);
+  font-size: 2.1rem;
+  font-family: var(--fuentePrincipal);
+  height: 100%;
+  animation: 8s infinite flotar linear;
+}
+
+/* Globales*/
+
+* {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* Header */
+
+.header {
+  background-image: url(./img/header-rick.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30rem;
+  animation: 8s infinite flotar linear;
+}
+
+.header__searcher {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: 8s infinite flotar linear;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(0, -5px);
+  }
+
+  75% {
+    transform: translate(0, 5px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.header__searcherContainer {
+  position: relative;
+}
+
+.header__searcherContainer input {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.header__searcherContainer input::placeholder {
+  text-align: center;
+}
+
+.header__searcherContainer section {
+  position: absolute;
+  width: 100%;
+  background-color: var(--color-primarioOscuro);
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  max-height: 231px;
+  overflow: auto;
+}
+
+.header__searcherContainer section.on {
+  display: block;
+}
+
+.header__searcherContainer section.off {
+  display: none;
+}
+
+.header__searcherContainer section p {
+  display: block;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header__searcherContainer section p:hover {
+  background-color: var(--color-primario);
+}
+
+/* Main */
+
+.body__infoLocation>h1 {
+  color: #0daabf;
+  font-weight: 900;
+  text-align: center;
+}
+
+.infoLocation__tittle {
+  text-align: center;
+}
+
+.container__infoLocation {
+  margin: 0 1.5rem;
+  border-radius: 4px;
+  background-color: var(--color-primarioOscuro);
+  max-width: 900px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .container__infoLocation {
+    margin: 0 auto;
+  }
+
+}
+
+.infoLocation__tittle h2 {
+  color: #ece49d;
+  padding: 2rem 0;
+}
+
+.infoLocation__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.infoLocation__info p span {
+  font-weight: bold;
+  color: #e4dc2c;
+}
+
+/* Container cards */
+
+.body__dataLocation {
+  margin: 2rem 1.5rem;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .body__dataLocation {
+    margin: 2rem auto;
+  }
+}
+
+/* Card styles */
+
+.cardCharacter {
+  height: 45rem;
+  width: 25rem;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  background-color: #f7d000;
+  background: linear-gradient(to top, #f7d000, rgb(5, 5, 5));
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-reflect: below .2rem linear-gradient(transparent 70%, #0004);
+  filter: grayscale(1);
+}
+
+.cardCharacter:hover {
+  transition: .1s;
+  filter: grayscale(0);
+  color: black;
+}
+
+.containerStatus {
+  background-color: #ece49d;
+  border-end-end-radius: 5px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  padding: 7px;
+  padding-right: 8px;
+}
+
+.containerStatus i.Alive {
+  color: rgb(10, 143, 10);
+}
+
+.containerStatus i.Dead {
+  color: rgb(218, 10, 10);
+}
+
+.containerStatus i.unknown {
+  color: gray;
+}
+
+.containerStatus p {
+  margin: 0;
+}
+
+.cardCharacter figure {
+  margin: 0;
+  width: 100%;
+}
+
+.cardCharacter figure figcaption {
+  margin: 0 1rem;
+}
+
+.cardCharacter>p {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.cardCharacter>p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.cardCharacter .characterTittle {
+  margin-top: 1rem;
+  color: #fff;
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.pagination article {
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination article.pageActive {
+  background-color: red;
+}
+
+.pagination article:hover {
+  background-color: darkred;
+}
